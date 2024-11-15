@@ -17,6 +17,7 @@ app.use('/api/users', userRouter);
 // Use tourRouter for all /api/tours routes
 app.use('/api/tours', tourRouter);
 
+
 const port = 4000;
 // Start the server
 app.listen(port, () => {

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../middleware/auth.js');
 const {
     getAllUsers,
     getUserById,
@@ -8,8 +9,11 @@ const {
     deleteUser,
 } = require('../controllers/userControllers');
 
+
 // GET /users
 router.get('/', getAllUsers);
+
+router.use(auth);
 
 // POST /users
 router.post('/', createUser);
@@ -22,5 +26,6 @@ router.put('/:userId', updateUser);
 
 // DELETE /users/:userId
 router.delete('/:userId', deleteUser);
+
 
 module.exports = router;
