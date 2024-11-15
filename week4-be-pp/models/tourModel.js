@@ -16,7 +16,7 @@ const getAll = () => {
 };
 
 const addOne = (name, info, image, price) => {
-  if (!name | !info | !image | !price) {
+  if (!name || !info || !image || !price) {
     return false;
   }
   const newTour = {
@@ -65,6 +65,7 @@ const deleteOneById = (id) => {
     return tourArray.length < initialLenght;
   } else return false;
 };
+
 if (require.main === module) {
   let result = addOne("Paris in 7 Days Tour", "Paris is synonymous.", "https://www.course-api.com/images/tours/tour-1.jpeg", 500);
   console.log(result);

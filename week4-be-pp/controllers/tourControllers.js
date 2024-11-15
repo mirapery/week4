@@ -28,7 +28,7 @@ const updateTour = (req, res) => {
   const tourId = req.params.tourId;
   const updatedData = req.body;
   const updatedTour = Tour.updateOneById(tourId, updatedData);
-  if (updateTour) {
+  if (updatedTour) {
     res.json(updatedTour);
   } else {
     res.status(404).json({ message: "Tour not found" });
