@@ -4,7 +4,11 @@ import Title from "./Title";
 import Tour from "./Tour";
 
 function Tours() {
-const [toursData, setToursData] = useState(tours);
+  const [toursData, setToursData] = useState(tours);
+
+  const handleRemoveTour = (id) => {
+    setToursData(toursData.filter((tour) => tour.id !== id));
+  };
 
   return (
     <section className="section" id="tours">
@@ -12,7 +16,12 @@ const [toursData, setToursData] = useState(tours);
 
       <div className="section-center featured-center">
         {toursData.map((tour) => {
-          return <Tour key={tour.id} {...tour} />
+          return (
+            <div key={tour.id} className="tour-item">
+              <Tour {...tour} />
+              <button className="delete-button" onClick={() => handleRemoveTour(tour.id)}>Remove</button>
+            </div>
+          );
         })}
       </div>
     </section>
