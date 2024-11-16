@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Tours from "./components/Tours";
 import Home from "./components/Home";
 import NotFound from "./components/NotFound";
+import Registration from "./components/Registration";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/services" element={<Services />} />
       <Route path="/tours" element={<Tours />} />
+      <Route path="/registration" element={<Registration />} />
       <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
